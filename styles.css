@@ -418,11 +418,6 @@ p{margin:0 0 1.1em}
 .footer__credit{opacity:.7}
 .footer a{color:inherit}
 
-/* magnetic cursor ring (desktop) */
-.cursor{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:130;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s,opacity .3s;mix-blend-mode:difference;opacity:0}
-.cursor.on{opacity:.9}
-.cursor.big{width:78px;height:78px;margin:-39px 0 0 -39px;background:rgba(226,201,154,.15)}
-.cursor.drag::after{content:"drag";position:absolute;inset:0;display:grid;place-items:center;font:500 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
 
 /* responsive */
 @media (max-width:1100px){
@@ -527,7 +522,6 @@ p{margin:0 0 1.1em}
   .marquee ul[aria-hidden]{display:none}
   .marquee ul{flex-wrap:wrap;justify-content:center;row-gap:14px}
   .grain{animation:none}
-  .cursor{display:none}
 }
 /* echo the venue's own forest-green + gold print branding */
 .packages.section--dark{background:#22342a}
@@ -675,3 +669,22 @@ p{margin:0 0 1.1em}
   .glimpse__grid .frame::after{inset:6px}
   .footer__contact{flex-direction:column;align-items:center;font-size:14px}
 }
+
+/* v3: twilight photo backgrounds for CTA band + contact hero */
+.cta-band__media,.phero__bg{position:absolute;inset:-12% 0;z-index:-2;transform:translate3d(0,var(--py,0px),0)}
+.cta-band__media img,.phero__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.cta-band__veil,.phero__veil{position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 80% at 50% 50%,rgba(31,22,16,.5),rgba(31,22,16,.82) 75%),linear-gradient(180deg,rgba(31,22,16,.55),rgba(31,22,16,.35) 40%,rgba(31,22,16,.85))}
+.cta-band__wreath{color:rgba(226,201,154,.22)}
+.phero--photo{min-height:min(88vh,820px);display:flex;align-items:center;background:var(--wood)}
+.phero--photo .phero__grid{grid-template-columns:minmax(0,680px)}
+.phero--photo .phero__veil{background:linear-gradient(90deg,rgba(31,22,16,.88),rgba(31,22,16,.55) 55%,rgba(31,22,16,.25)),linear-gradient(180deg,rgba(31,22,16,.5),transparent 30%,transparent 70%,rgba(31,22,16,.7))}
+.phero--photo .phero__sprig{left:auto;right:4%}
+.rv .phero__bg img{transform:scale(1.08);transition:transform 2.4s var(--ease)}
+.rv.loaded .phero__bg img{transform:none}
+.glimpse.section--cream .frame{background:#fffdf8}
+@media (max-width:700px){
+  .phero--photo{min-height:auto;padding:130px 0 90px}
+  .phero--photo .phero__veil{background:linear-gradient(180deg,rgba(31,22,16,.7),rgba(31,22,16,.6) 50%,rgba(31,22,16,.88))}
+}
+.moon--hero .moon__veil{background:linear-gradient(90deg,rgba(31,22,16,.86),rgba(31,22,16,.5) 55%,rgba(31,22,16,.28)),linear-gradient(180deg,rgba(31,22,16,.45),transparent 35%,rgba(31,22,16,.55) 70%,rgba(31,22,16,.9))}
+@media (max-width:700px){.moon--hero .moon__veil{background:linear-gradient(180deg,rgba(31,22,16,.72),rgba(31,22,16,.62) 45%,rgba(31,22,16,.9))}}

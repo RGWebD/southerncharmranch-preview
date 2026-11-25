@@ -1,5 +1,7 @@
-# Southern Charm Ranch — multi-page preview (v2)
+# Southern Charm Ranch: website concept
 
-Preview of the restructured, multi-page concept site for Southern Charm Ranch (Keystone Heights, FL), by RGWebD.
-Pages: Home, The Venue, Weddings, Private Events, Gallery, FAQ, Contact. Static HTML/CSS/JS; all links relative.
-This preview is `noindex` so it doesn't compete with the live concept at https://rgwebd.github.io/southerncharmranch/.
+Design preview by RGWebD for Southern Charm Ranch, a rustic-elegant barn wedding and event venue in Keystone Heights, FL.
+
+Static site (HTML/CSS/JS, no build). Hosted on GitHub Pages: https://rgwebd.github.io/southerncharmranch/
+
+All photos are the venue's own (from their Facebook page). Pricing is transcribed from the venue's published pricing sheets.

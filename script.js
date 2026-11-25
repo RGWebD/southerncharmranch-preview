@@ -131,7 +131,7 @@
     $$(".reveal, .split, .split-lines, .draw").forEach((el) => el.classList.add("in"));
   }
 
-  /* ---------- Magnetic buttons + cursor ring ---------- */
+  /* ---------- Magnetic buttons ---------- */
   if (fine && !reduce) {
     $$(".magnetic").forEach((b) => {
       b.addEventListener("pointermove", (e) => {
@@ -146,21 +146,6 @@
         b.firstElementChild && (b.firstElementChild.style.transform = "");
       });
     });
-    const ring = document.createElement("div");
-    ring.className = "cursor"; ring.setAttribute("aria-hidden", "true");
-    document.body.appendChild(ring);
-    let cx = -100, cy = -100, rx = -100, ry = -100;
-    addEventListener("pointermove", (e) => { cx = e.clientX; cy = e.clientY; ring.classList.add("on"); }, { passive: true });
-    document.addEventListener("pointerleave", () => ring.classList.remove("on"));
-    const loop = () => { rx += (cx - rx) * 0.2; ry += (cy - ry) * 0.2; ring.style.transform = `translate(${rx}px, ${ry}px)`; requestAnimationFrame(loop); };
-    loop();
-    $$("a, button, summary, .polaroid").forEach((el) => {
-      el.addEventListener("pointerenter", () => ring.classList.add("big"));
-      el.addEventListener("pointerleave", () => ring.classList.remove("big"));
-    });
-    const railEl = $("[data-rail]");
-    railEl?.addEventListener("pointerenter", () => ring.classList.add("big", "drag"));
-    railEl?.addEventListener("pointerleave", () => ring.classList.remove("big", "drag"));
   }
 
   /* ---------- Polaroids: tap to bring forward ---------- */
